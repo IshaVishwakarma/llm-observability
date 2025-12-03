@@ -24,3 +24,5 @@ build/
 # Docker
 *.db
 postgres_data/
+
+.env
