@@ -1,0 +1,53 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: llm_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: llm_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - llmnet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: llm_backend
+    ports:
+      - "9000:9000"
+    env_file:
+      - backend/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - llmnet
+
+  frontend:
+    build: ./frontend
+    container_name: llm_frontend
+    ports:
+      - "8501:8501"
+    env_file:
+      - frontend/.env
+    environment:
+      BACKEND_URL: http://backend:9000
+    depends_on:
+      - backend
+    networks:
+      - llmnet
+
+networks:
+  llmnet:
+
+volumes:
+  postgres_data:

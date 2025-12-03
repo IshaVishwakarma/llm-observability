@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environments
+.venv/
+env/
+venv/
+
+# Streamlit
+.streamlit/
+
+# Node
+node_modules/
+
+# Build files
+dist/
+build/
+
+# OS files
+.DS_Store
+
+# Docker
+*.db
+postgres_data/
