@@ -1,7 +1,7 @@
 🚀 LLM Observability Platform
 
 A complete monitoring & analytics system for Large Language Models
-built with FastAPI • Streamlit • PostgreSQL • Docker
+built with FastAPI • Streamlit • PostgreSQL 
 
 🌟 Overview
 
@@ -77,32 +77,6 @@ Most-used model
 
 Users can rate responses and leave comments — all stored for analysis.
 
-🐳 Docker Support
-
-This system is fully containerized using Docker.
-
-Run everything with:
-
-docker-compose up --build
-
-
-Docker ensures:
-
-Portability
-
-Easy deployment
-
-Clean isolation
-
-Zero setup issues
-
-Containers include:
-
-FastAPI Backend
-
-Streamlit Frontend
-
-PostgreSQL Database
 
 🏗️ Tech Stack
 Layer	Technology
