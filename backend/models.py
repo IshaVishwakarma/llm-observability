@@ -19,7 +19,7 @@ class LLMRequest(Base):
     error_message = Column(Text, nullable=True)
     session_id = Column(String(128), nullable=True)
 
-    # ⭐ NEW FEEDBACK FIELDS
+   
     feedback_rating = Column(Integer, nullable=True)
     feedback_comment = Column(Text, nullable=True)
 
