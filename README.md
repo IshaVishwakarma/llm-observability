@@ -111,21 +111,6 @@ Backend → http://localhost:9000
 
 Frontend → http://localhost:8501
 
-📁 Project Structure
-llm-observability/
-│── backend/
-│   ├── main.py
-│   ├── models.py
-│   ├── crud.py
-│   ├── callbacks.py
-│   ├── database.py
-│── frontend/
-│   ├── app.py
-│── postgres_data/
-│── docker-compose.yml
-│── requirements.txt
-│── README.md
-
 🙋‍♀️ Author
 
 Isha Vishwakarma
